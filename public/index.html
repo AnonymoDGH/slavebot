@@ -3,15 +3,14 @@
 <head>
 	<link rel="stylesheet" href="/css/main.css">
 	<title>SlaveBot</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.js"></script>
 </head>
 
 <body>
 	<div id="sidebar">
 		<button tab="setup" class="active">Setup</button>
-		<button tab="bots">Bots</button>
 		<button tab="actions">Actions</button>
-		<button tab="utility">Utility</button>
 		<button tab="cheats">Cheats</button>
 		<button tab="console">Console</button>
 	</div>
@@ -43,7 +42,8 @@
 			<button>Disconnect</button>
 		</div>
 		<div tab="bots" hidden>
-
+    <div id="servers-list"></div>
+      
 		</div>
 		<div tab="actions" hidden>
 			<label>Bot Actions</label>
