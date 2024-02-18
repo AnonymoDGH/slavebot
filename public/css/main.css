@@ -1,69 +1,232 @@
+/* Estilos generales */
 html, body {
-    margin: 0;
+  margin: 0;
+  font-family: sans-serif;
+  color: #333;
 }
+
+.container {
+  
+}
+
+
+/* Barra lateral */
 #sidebar {
-    background-color: #2e2e2e;
-    float: left;
-    width: 192px;
-    height: 100%;
+  background-color: #f5f5f5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100vh;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
 #sidebar button {
-    background-color: transparent;
-    text-transform: uppercase;
-    font-size: 24px;
-    border: none;
-    width: 100%;
-    height: 50px;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  text-align: left;
+  border: none;
+  background-color: transparent;
+  color: inherit;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
 }
-button.active {
-    background-color: #00b143 !important;
+
+#sidebar button.active {
+  background-color: #e0e0e0;
 }
+
+/* Contenido principal */
 #content {
-    background-color: #393939;
-    margin-left: 192px;
-    padding-left: 10px;
-    height: 100%;
+  margin-left: 200px;
+  padding: 20px;
 }
-#content > div label:first-child {
-    font-size: 20px;
-    font-weight: bold;
-}
-* {
-    font-family: sf ui display, sans-serif;
-    color: #fff;
-}
-button {
-    background-color: rgb(0, 177, 67);
-    border: none;
-}
-select, input {
-    background-color: #2e2e2e !important;
-    border: solid 1px rgb(120, 120, 120);
-}
+
+/* Elementos específicos */
 .feature {
-    border: solid 5px #00b143;
-    width: fit-content;
-    padding: 10;
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-bottom: 20px;
 }
+
+select, input {
+  border: 1px solid #ddd;
+  padding: 5px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
 input[type="range"] {
-    -webkit-appearance: none;
-    appearance: none;
-    height: 10px;
-    background: rgb(25, 25, 25);
-    outline: none;
-    margin: 0;
-    margin-bottom: 10 !important;
-}
-input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 10px;
+  background: #ddd;
+  outline: none;
+  margin: 0;
+  cursor: pointer;
+
+  &::-webkit-slider-thumb {
     -webkit-appearance: none;
     width: 10px;
     height: 20px;
-    background: rgb(0, 177, 67);
+    background: #333;
     cursor: pointer;
+  }
 }
-input[type="range"]::-moz-range-thumb {
-    width: 10px;
-    height: 20px;
-    background: rgb(0, 177, 67);
-    cursor: pointer;
+
+/* Media queries para dispositivos móviles */
+@media only screen and (max-width: 768px) {
+  #sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    box-shadow: none;
+  }
+
+  #content {
+    margin-left: 0;
+  }
+}
+
+.server-card {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.server-info {
+  margin-bottom: 10px;
+}
+
+.server-controls {
+  display: flex;
+  justify-content: space-between;
+}
+
+.label {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+button {
+  border: 1px solid #ddd;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #f0f0f0;
+}
+
+.checkbox-wrapper-16 *,
+  .checkbox-wrapper-16 *:after,
+  .checkbox-wrapper-16 *:before {
+  box-sizing: border-box;
+}
+
+.checkbox-wrapper-16 .checkbox-input {
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.checkbox-wrapper-16 .checkbox-input:checked + .checkbox-tile {
+  border-color: #2260ff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  color: #2260ff;
+}
+
+.checkbox-wrapper-16 .checkbox-input:checked + .checkbox-tile:before {
+  transform: scale(1);
+  opacity: 1;
+  background-color: #2260ff;
+  border-color: #2260ff;
+}
+
+.checkbox-wrapper-16 .checkbox-input:checked + .checkbox-tile .checkbox-icon,
+  .checkbox-wrapper-16 .checkbox-input:checked + .checkbox-tile .checkbox-label {
+  color: #2260ff;
+}
+
+.checkbox-wrapper-16 .checkbox-input:focus + .checkbox-tile {
+  border-color: #2260ff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1), 0 0 0 4px #b5c9fc;
+}
+
+.checkbox-wrapper-16 .checkbox-input:focus + .checkbox-tile:before {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.checkbox-wrapper-16 .checkbox-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 7rem;
+  min-height: 7rem;
+  border-radius: 0.5rem;
+  border: 2px solid #b5bfd9;
+  background-color: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.15s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.checkbox-wrapper-16 .checkbox-tile:before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid #b5bfd9;
+  background-color: #fff;
+  border-radius: 50%;
+  top: 0.25rem;
+  left: 0.25rem;
+  opacity: 0;
+  transform: scale(0);
+  transition: 0.25s ease;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='://www.w3.org/2000/svg' width='192' height='192' fill='%23FFFFFF' viewBox='0 0 256 256'%3E%3Crect width='256' height='256' fill='none'%3E%3C/rect%3E%3Cpolyline points='216 72.005 104 184 48 128.005' fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='32'%3E%3C/polyline%3E%3C/svg%3E");
+  background-size: 12px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.checkbox-wrapper-16 .checkbox-tile:hover {
+  border-color: #2260ff;
+}
+
+.checkbox-wrapper-16 .checkbox-tile:hover:before {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.checkbox-wrapper-16 .checkbox-icon {
+  transition: 0.375s ease;
+  color: #494949;
+}
+
+.checkbox-wrapper-16 .checkbox-icon svg {
+  width: 3rem;
+  height: 3rem;
+}
+
+.checkbox-wrapper-16 .checkbox-label {
+  color: #707070;
+  transition: 0.375s ease;
+  text-align: center;
 }
